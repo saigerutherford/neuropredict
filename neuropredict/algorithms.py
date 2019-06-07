@@ -501,6 +501,8 @@ def get_xgboost(reduced_dim=None, grid_search_level=cfg.GRIDSEARCH_LEVEL_DEFAULT
 
     return xgb, clf_name, param_grid
 
+def get_LinearModel()
+
 
 
 def get_classifier(classifier_name=cfg.default_classifier,
@@ -537,7 +539,8 @@ def get_classifier(classifier_name=cfg.default_classifier,
                          extratreesclassifier=get_ExtraTreesClassifier,
                          decisiontreeclassifier=get_DecisionTreeClassifier,
                          svm=get_svc,
-                         xgboost=get_xgboost)
+                         xgboost=get_xgboost
+                         linearmodel=get_LinearModel)
 
     if classifier_name not in map_to_method:
         raise NotImplementedError('Invalid name or classifier not implemented.')

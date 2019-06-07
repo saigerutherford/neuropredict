@@ -14,6 +14,8 @@ from multiprocessing import Pool, Manager
 from functools import partial
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn import linear_model
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.metrics import confusion_matrix, roc_auc_score
 from sklearn.model_selection import GridSearchCV, ShuffleSplit, RepeatedKFold
 import traceback
@@ -58,7 +60,7 @@ def eval_optimized_model_on_testset(train_fs, test_fs,
         List of labels to compute the order of confusion matrix.
 
     feat_sel_size : str or int
-        Metho to choose the number of featurese to select.
+        Method to choose the number of featurese to select.
 
     train_perc : float
         Training set fraction to run the inner cross-validation.
